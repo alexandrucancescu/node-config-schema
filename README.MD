@@ -134,7 +134,7 @@ This design choice has been made because of the nature of the **config** package
 
 ## API DOCUMENTATION
 
-#### TConfig
+### TConfig
 
 This is the base singleton class.
 
@@ -155,11 +155,11 @@ occurrence of a property that does not fulfil the schema.
 
 Retrieve the TConfig instance. This is a getter.
 
-#### TSchema
+### TSchema
 
 Definition of schema type. 
 
-#### TNumber,TBoolean,TString
+### TNumber,TBoolean,TString
 
 `TType(optional?: boolean)`
 
@@ -178,7 +178,7 @@ Same as the other `TTypes`.
 `TObject` can be any object, including an array or an empty object `{}`.
 
 `TAny` can be anything except null and undefined
-#### TArray
+### TArray
 
 `TArray(optional?: boolean,nestedSchema?: TSchema)`
 
@@ -278,7 +278,7 @@ first. If it cannot find one it will inject the new types bellow the
 `//config_types` comment. If the comment is absent, it will inject the types
 at the end of the file.
 
-#### API
+### API
 `tconfig-inject cmd filePath`
 
 **cmd**
