@@ -65,6 +65,8 @@ const {TConfig,TNumber,TBoolean,TAny}=require("t-config");
 1. First you need to initialize the TConfig by calling ```TConfig.create``` and passing it your schema.
 2. Retrieve the singleton instance using `TConfig.instance`
 3. Start the parsing process with `parseConfig()`
+4. `parseConfig()` returns your configuration object, just as **config** would have, type checked and
+validated. No surprises!
 
 TConfig will parse the config files using **config** package and
 check each property that it fulfills the schema defined by you.
