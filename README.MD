@@ -3,7 +3,7 @@
 ## Features
 
 *   Define schema for configuration files
-*   Validate configuration fles for type errors
+*   Validate configuration files for type errors
 *   Recursive check, allowing any nested level
 *   Generates type declaration for typescript and injects them into your code
 
@@ -23,7 +23,7 @@ Furthermore tconfig can **generate** typescript type definitions for your schema
 **inject** them into your code, keeping them up to date.
 
 It wraps around the popular node package [config](https://www.npmjs.com/package/config) so
-it offers all the customization of it, like:
+it offers all the customization of it such as:
 * Merging multiple config files
 * Loading config files based on the environment
 * Config files written in **.yml .yaml .xml .coffee .cson .properties .json, .json5 .hjson .ts .js**
@@ -79,7 +79,7 @@ A schema is defined using a combination of nested objects and `TTypes`.
 TTypes include:
 `TNumber,TBoolean,TString,TArray,TObject,TAny`
 
-These `TTypes` are functions that can be passed to the schema as they are, like:
+These `TTypes` are functions that can be passed to the schema as they are such as:
 
 ```javascript
 {
@@ -96,7 +96,7 @@ Or pass the result of the function.
 
 Every `TType` function has an optional `optional` parameter.
 If this parameter is set to true, `TConfig` will treat the config
-property as optional, and will not trow an error if this is
+property as optional, and will not throw an error if this is
 undefined.
 
 For simplicity `TArray` can be passed to the schema as an
@@ -129,7 +129,7 @@ schema ```[TSchema]```.
 ---
 #### NOTE:
 
-TConfig is designed using the singleton package, meaning there can only be
+TConfig is designed using the singleton design, meaning there can only be
 one instance of it, that will be created using the `create` method.
 This design choice has been made due to the nature of the **config** package.
 
