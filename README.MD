@@ -61,7 +61,7 @@ const config=TConfig.instance.parseConfig();
 const {TConfig,TNumber,TBoolean,TAny}=require("t-config");
 ```
 
-####How:
+#### How:
 1. First you need to initialize the TConfig by calling ```TConfig.create``` and passing it your schema.
 2. Retrieve the singleton instance using `TConfig.instance`
 3. Start the parsing process with `parseConfig()`
@@ -138,7 +138,7 @@ This design choice has been made because of the nature of the **config** package
 
 This is the base singleton class.
 
-#####Methods:
+##### Methods:
 
 `create(schema: TSchema, configDir?: string)`
 
@@ -278,7 +278,7 @@ first. If it cannot find one it will inject the new types bellow the
 `//config_types` comment. If the comment is absent, it will inject the types
 at the end of the file.
 
-####API
+#### API
 `tconfig-inject cmd filePath`
 
 **cmd**
@@ -288,7 +288,7 @@ at the end of the file.
 **filePath** can be relative to the project root using `./relative-path`
 or absolute.
 
-###NOTICE
+### NOTICE
 
 In order to find your schema declaration the script tries to find
 the string sequence `TConfig.create(`. If you import `TConfig` under
