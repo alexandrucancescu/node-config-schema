@@ -7,6 +7,12 @@
 *   Recursive check, allowing any nested level
 *   Generates type declaration for typescript and injects them into your code
 
+## Install
+
+```shell
+$ npm install --save t-config
+```
+
 ## Introduction
 
 Tconfig lets you define a schema for your configuration files.
@@ -55,12 +61,13 @@ const config=TConfig.instance.parseConfig();
 const {TConfig,TNumber,TBoolean,TAny}=require("t-config");
 ```
 
-1. First you need to initialize the TConfig by calling `TConfig.create` and passing it your schema.
+####How:
+1. First you need to initialize the TConfig by calling ```TConfig.create``` and passing it your schema.
 2. Retrieve the singleton instance using `TConfig.instance`
 3. Start the parsing process with `parseConfig()`
 
-TConfig will parse the config object retrieved by **config** package and
-check every property recursively that is the type mentioned in your schema.
+TConfig will parse the config files using **config** package and
+check each property that it fulfills the schema defined by you.
 
 #### How to define a schema:
 
@@ -76,7 +83,7 @@ These `TTypes` are functions that can be passed to the schema as they are, like:
     x: TNumber,
 }
 ```
-Or the result of the function call can be passed.
+Or pass the result of the function.
 ```javascript
 {
     x: TNumber(),
@@ -90,9 +97,31 @@ property as optional, and will not trow an error if this is
 undefined.
 
 For simplicity `TArray` can be passed to the schema as an
-array, with the only item of this array being the optional nested
-schema. **Read API Documentation** for examples.
+array ```[]```, with the only item of this array being the optional nested
+schema ```[NestedTType]```.
 
+
+```javascript
+{
+    x: TString,
+    same as
+    x: TString(),
+    same as
+    x: TString(false),
+    
+    y: Array,
+    same as
+    y: [],
+    same as 
+    y: Array()
+   
+   z:Array(false,TNumber),
+   same as
+   z:[TNumber]
+}
+```
+
+**Read API Documentation** for more examples.
 
 ---
 #### NOTE:
@@ -112,18 +141,17 @@ This is the base singleton class.
 `create(schema: TSchema, configDir?: string)`
 
 This method initializes the TConfig class with the given `schema`.
-Optionally you can pass the path to the dir to the configuration files.
+Optionally you can pass the path to the dir of the configuration files.
 It will be passed to the **config** package using `process.env`.
 
 `parseConfig()`
 
 Parses and returns the configurations object. Will throw error on the first
-occurrence of an property that does not fulfil the schema.
+occurrence of a property that does not fulfil the schema.
 
 `instance`
 
-Retrieve the TConfig instance. This is a getter so no need to
-call it.
+Retrieve the TConfig instance. This is a getter.
 
 #### TSchema
 
@@ -145,7 +173,7 @@ undefined.
 
 Same as the other `TTypes`.
 
-`TObject` can be any object, including an array or an empty object.
+`TObject` can be any object, including an array or an empty object `{}`.
 
 `TAny` can be anything except null and undefined
 #### TArray
