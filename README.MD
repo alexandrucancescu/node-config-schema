@@ -149,7 +149,7 @@ It will be passed to the **config** package using `process.env`.
 
 `parseConfig()`
 
-Parses and returns the configurations object. Will throw error on the first
+Parses and returns the configurations object. Will throw an error on the first
 occurrence of a property that does not fulfil the schema.
 
 `instance`
