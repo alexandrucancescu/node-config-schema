@@ -31,7 +31,7 @@ it offers all the customization of it, like:
 ## Quick Start
 
 This guide assumes you are already familiar with [config](https://www.npmjs.com/package/config)
-package and how it works. If not, you should read their quick guide first.
+package and know how it works. If not, you should read their quick guide first.
 
 This guide is also written in typescript, but can be easily adjusted for js.
 
@@ -69,7 +69,8 @@ const {TConfig,TNumber,TBoolean,TAny}=require("t-config");
 validated. No surprises!
 
 TConfig will parse the config files using **config** package and
-check each property that it fulfills the schema defined by you.
+check each property of each object and each item of each array, making
+sure they fulfill the schema defined by you.
 
 #### How to define a schema:
 
@@ -100,7 +101,7 @@ undefined.
 
 For simplicity `TArray` can be passed to the schema as an
 array ```[]```, with the only item of this array being the optional nested
-schema ```[NestedTType]```.
+schema ```[TSchema]```.
 
 
 ```javascript
@@ -130,7 +131,7 @@ schema ```[NestedTType]```.
 
 TConfig is designed using the singleton package, meaning there can only be
 one instance of it, that will be created using the `create` method.
-This design choice has been made because of the nature of the **config** package.
+This design choice has been made due to the nature of the **config** package.
 
 ## API DOCUMENTATION
 
