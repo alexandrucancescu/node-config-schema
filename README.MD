@@ -298,6 +298,9 @@ a different name the parser will not be able to find your declaration.
 Also the parser finds the old version of your type declaration
 by searching for `type ConfigType=` so don't modify it either.
 
+### LICENSE
+
+#### MIT
 
 
 
