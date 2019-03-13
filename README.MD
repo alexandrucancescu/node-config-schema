@@ -1,4 +1,4 @@
-# TConfig
+# node-config-schema
 
 ## Features
 

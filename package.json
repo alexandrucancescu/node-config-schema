@@ -1,5 +1,5 @@
 {
-  "name": "t-config",
+  "name": "config-file-schema",
   "version": "1.0.0",
   "description": "Type checking for config files with type definition injection for typescript",
   "private": false,
@@ -30,7 +30,7 @@
   "typings": "dist/lib/index.d.ts",
   "license": "MIT",
   "keywords": [
-    "node","config","typescript","node-config","ts-config"
+    "node","config","schema","typescript","node-config","ts-config","config-files"
   ],
   "engines": {
     "node": ">=0.6.13"
