@@ -19,10 +19,6 @@
   "bin": {
     "tconfig-inject": "./dist/inject.js"
   },
-  "files": [
-    "dist/*/*.js",
-    "dist/*/*.d.ts"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alexandrucancescu/tconfig"
