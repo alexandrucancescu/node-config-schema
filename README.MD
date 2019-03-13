@@ -10,16 +10,16 @@
 ## Install
 
 ```shell
-$ npm install --save t-config
+$ npm install --save node-config-schema
 ```
 
 ## Introduction
 
-Tconfig lets you define a schema for your configuration files.
+**node-config-schema** lets you define a schema for your configuration files.
 This ensures that you have no surprises in your application during runtime, any property with the wrong
 type is caught during the initialization of the app.
 
-Furthermore tconfig can **generate** typescript type definitions for your schema and even 
+Furthermore **node-config-schema** can **generate** typescript type definitions for your schema and even 
 **inject** them into your code, keeping them up to date.
 
 It wraps around the popular node package [config](https://www.npmjs.com/package/config) so
@@ -36,7 +36,7 @@ package and know how it works. If not, you should read their quick guide first.
 This guide is also written in typescript, but can be easily adjusted for js.
 
 ```javascript
-import  TConfig,{TBoolean, TNumber, TObject, TString,TAny} from "t-config"
+import  TConfig,{TBoolean, TNumber, TObject, TString,TAny} from "node-config-schema"
 
 TConfig.create({
     admins:TObject,
@@ -58,11 +58,11 @@ const config=TConfig.instance.parseConfig();
 ##### Import JS:
 
 ```javascript
-const {TConfig,TNumber,TBoolean,TAny}=require("t-config");
+const {TConfig,TNumber,TBoolean,TAny}=require("node-config-schema");
 ```
 
 #### How:
-1. First you need to initialize the TConfig by calling ```TConfig.create``` and passing it your schema.
+1. First you need to initialize TConfig by calling ```TConfig.create``` and passing it your schema.
 2. Retrieve the singleton instance using `TConfig.instance`
 3. Start the parsing process with `parseConfig()`
 4. `parseConfig()` returns your configuration object, just as **config** would have, type checked and
@@ -129,7 +129,7 @@ schema ```[TSchema]```.
 ---
 #### NOTE:
 
-TConfig is designed using the singleton design, meaning there can only be
+**node-config-schema** is designed using the singleton design, meaning there can only be
 one instance of it, that will be created using the `create` method.
 This design choice has been made due to the nature of the **config** package.
 
@@ -211,7 +211,7 @@ schema.
 
 ## Injecting type definitions for typescript 
 
-TConfig can also generate type definitions for your
+**node-config-schema** can also generate type definitions for your
 schema and inject them into your code. This is important
 for typescript developers, as they can benefit from
 IDE functions when the IDE can understand the types your schema
@@ -221,7 +221,7 @@ Setting this up is straight-forward.
 
 File `src/Config.ts`
 ```javascript
-import  TConfig,{TBoolean, TNumber, TObject, TString,TAny} from "t-config"
+import  TConfig,{TBoolean, TNumber, TObject, TString,TAny} from "node-config-schema"
 
 //config_types
 
