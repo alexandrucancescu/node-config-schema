@@ -20,8 +20,8 @@
     "tconfig-inject": "./dist/inject.js"
   },
   "files": [
-    "lib/*.js",
-    "lib/*.d.ts"
+    "dist/*.js",
+    "dist/*.d.ts"
   ],
   "repository": {
     "type": "git",
