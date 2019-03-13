@@ -23,8 +23,11 @@
     "type": "git",
     "url": "git+https://github.com/alexandrucancescu/tconfig"
   },
-  "types": "lib/index.d.ts",
-  "typings": "lib/index.d.ts",
+  "files": [
+    "dist/*"
+  ],
+  "types": "dist/lib/index.d.ts",
+  "typings": "dist/lib/index.d.ts",
   "license": "MIT",
   "keywords": [
     "node","config","typescript","node-config","ts-config"
