@@ -6,6 +6,7 @@
 *   Validate configuration files for type errors
 *   Recursive check, allowing any nested level
 *   Generates type declaration for typescript and injects them into your code
+*   Typescript definitions included
 
 ## Install
 
@@ -96,11 +97,11 @@ Or pass the result of the function.
 
 Every `TType` function has an optional `optional` parameter.
 If this parameter is set to true, `TConfig` will treat the config
-property as optional, and will not throw an error if this is
+property as optional, and will not throw an error if left
 undefined.
 
 For simplicity `TArray` can be passed to the schema as an
-array ```[]```, with the only item of this array being the optional nested
+array ```[]```, with the only item being the optional nested
 schema ```[TSchema]```.
 
 
@@ -165,12 +166,13 @@ Definition of schema type.
 `TType(optional?: boolean)`
 
 Functions describing the type of the key they are assigned to.
+
 Can be passed as functions, or the result of their call can be passed.
 
 Every `TType` function has an optional `optional` parameter.
 If this parameter is set to true, `TConfig` will treat the config
 property as optional, and will not trow an error if this is
-undefined.
+left undefined.
 
 ### TObject,TAny
 
@@ -184,7 +186,7 @@ Same as the other `TTypes`.
 `TArray(optional?: boolean,nestedSchema?: TSchema)`
 
 Same as the other `TTypes` except this type has an additional
-optional parameter describing it's nested schema. Every member of the array
+optional parameter describing its nested schema. Every member of the array
 is checked to fulfill this schema. If `nestedSchema` is omitted, TConfig
 will only check that this is an array.
 
@@ -274,8 +276,8 @@ type ConfigType={
 ...
 ```
 
-The script attempts to replace a previous versions of the types
-first. If it cannot find one it will inject the new types bellow the
+The script attempts to replace a previous version of the types
+first. If it cannot find one, it will inject the new types bellow the
 `//config_types` comment. If the comment is absent, it will inject the types
 at the end of the file.
 
@@ -291,9 +293,9 @@ or absolute.
 
 ### NOTICE
 
-In order to find your schema declaration the script tries to find
+In order to find your schema declaration, the script tries to find
 the string sequence `TConfig.create(`. If you import `TConfig` under
-a different name the parser will not be able to find your declaration.
+a different name, the parser will not be able to find your declaration.
 
 Also the parser finds the old version of your type declaration
 by searching for `type ConfigType=` so don't modify it either.

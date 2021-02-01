@@ -1,13 +1,13 @@
 {
-  "name": "config-file-schema",
-  "version": "1.0.0",
+  "name": "node-config-schema",
+  "version": "1.0.3",
   "description": "Type checking for config files with type definition injection for typescript",
   "private": false,
   "main": "dist/lib/index.js",
-  "scripts": {
-    "start": "node ./dist/tconfig/TypeInjector.js ./src/Run.ts"
-  },
   "author": "Alexandru Cancescu",
+  "scripts": {
+    "inject": "node dist/inject.js src/Config.ts"
+  },
   "dependencies": {
     "config": "^3.0.1",
     "fs-extra": "^7.0.1"
@@ -30,7 +30,13 @@
   "typings": "dist/lib/index.d.ts",
   "license": "MIT",
   "keywords": [
-    "node","config","schema","typescript","node-config","ts-config","config-files"
+    "node",
+    "config",
+    "schema",
+    "typescript",
+    "node-config",
+    "ts-config",
+    "config-files"
   ],
   "engines": {
     "node": ">=0.6.13"

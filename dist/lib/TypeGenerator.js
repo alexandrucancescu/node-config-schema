@@ -57,7 +57,7 @@ class TypeGenerator {
             return `${tabs}${keyStr}${this.beautify(value, level + 1)}${lbreak}`;
         }
         else if (typeof value === "object" && Array.isArray(value)) {
-            return `${tabs}${keyStr}[${this.beautifyField(undefined, value[0], level)}]${lbreak}`;
+            return `${tabs}${keyStr}${this.beautifyField(undefined, value[0], level)}[]${lbreak}`;
         }
         else if (!value) {
             return "";

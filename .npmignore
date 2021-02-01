@@ -4,3 +4,4 @@ node_modules
 .gitignore
 src
 tsconfig.json
+dist/tests

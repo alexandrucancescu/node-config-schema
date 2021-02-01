@@ -4,17 +4,16 @@ const Types_1 = require("./Types");
 class TConfig {
     constructor(schema, configDir) {
         this.schema = schema;
-        this.config = {};
         if (configDir) {
             process.env.NODE_CONFIG_DIR = configDir;
         }
         this.configLib = require("config");
     }
     parseConfig() {
-        if (!this.config) {
-            this.config = this.parse(this.schema, []);
+        if (!this._config) {
+            this._config = this.parse(this.schema, []);
         }
-        return this.config;
+        return this._config;
     }
     getValueOf(type, hierarchy) {
         const key = hierarchy.join(".");
@@ -78,6 +77,9 @@ class TConfig {
             object[key] = this.figureStrategy(schema[key], [...hierarchy, key]);
         }
         return object;
+    }
+    get config() {
+        return this._config;
     }
     static create(schema, configDir) {
         if (this._instance !== undefined) {

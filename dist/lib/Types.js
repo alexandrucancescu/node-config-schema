@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.TType = exports.TObject = exports.TAny = exports.TArray = exports.TBoolean = exports.TNumber = exports.TString = void 0;
 function TString(optional) {
     return new TType("string", optional === true);
 }

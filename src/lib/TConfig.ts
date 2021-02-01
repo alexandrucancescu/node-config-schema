@@ -4,11 +4,10 @@ import { TResult, TSchema, TType, TTypeDescriptor} from "./Types";
 class TConfig{
 	private readonly configLib:IConfig;
 	private readonly schema:TSchema;
-	private config:TResult;
+	private _config:TResult;
 
 	private constructor(schema:TSchema,configDir?:string){
 		this.schema=schema;
-		this.config={};
 		if(configDir){
 			process.env.NODE_CONFIG_DIR=configDir;
 		}
@@ -16,10 +15,10 @@ class TConfig{
 	}
 
 	public parseConfig():TResult{
-		if(!this.config){
-			this.config=this.parse(this.schema,[]);
+		if(!this._config){
+			this._config=this.parse(this.schema,[]);
 		}
-		return this.config;
+		return this._config;
 	}
 
 	private getValueOf(type:TType,hierarchy:(string|number)[]){
@@ -84,6 +83,9 @@ class TConfig{
 		return object;
 	}
 
+	public get config():any{
+		return this._config;
+	}
 
 	//Singleton stuff
 	private static _instance:TConfig;

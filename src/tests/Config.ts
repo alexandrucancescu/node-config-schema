@@ -1,5 +1,4 @@
 import  TConfig,{TBoolean, TNumber, TObject, TString} from "../lib"
-import {join} from "path";
 
 //config_types
 type ConfigType={
@@ -14,18 +13,6 @@ type ConfigType={
 };
 
 TConfig.create({
-	database: {
-		hosts: [TString],
-		credentials: {
-			auth: TBoolean,
-			user: TString,
-			pass: TString,
-		}
-	}
-});
-
-
-TConfig.create({
 	gets: [{x: [[TNumber]]}],
 	puts:TObject,
 	database: {
@@ -37,7 +24,7 @@ TConfig.create({
 			pass: TString,
 		}
 	}
-},join(__dirname,"../cc"));
+},"./config");
 
 TConfig.instance.parseConfig();
 
